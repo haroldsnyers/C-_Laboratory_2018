@@ -13,7 +13,7 @@ namespace ConsoleApp2
             double x;
             while (true)
             {
-               Console.WriteLine("entrée réel");
+                Console.WriteLine("entrée réel");
                 string sx = Console.ReadLine();
 
                 try
@@ -23,34 +23,50 @@ namespace ConsoleApp2
                 }
                 catch (Exception e)
                 {
-
+                    Console.WriteLine("Ceci n'est pas un réel");
                 }
             }
             return x;
 
         }
         static void Main(string[] args)
-        {
-            Polynomial p = new Polynomial(new double[] { 1, 0, -2 });
-            
+        {                             
+            List<double> termsList = new List<double>();
+            Console.WriteLine("Ajouter Polynome? Y/N");
+            string response = Console.ReadLine();
+            Console.WriteLine("Entrée les nombres dans l'ordre");
+            while (response == "Y")
+            {
+                double tmpNbr = Valors();
+                termsList.Add(tmpNbr);
+                Console.WriteLine("Encore un nombre? Y/N");
+                response = Console.ReadLine();
+            }
+
+            Polynomial p = new Polynomial(termsList);
+
             Console.WriteLine(p.Degree);
             Console.WriteLine(p);
+            Console.WriteLine("Entrée le chiffre avec lequel vous voulez évaluez la fonction");
+            double number = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine(p.Evaluate(2));
 
-            Polynomial m = new Polynomial(new double[]);
         }
     }
 
     class Polynomial
     {
         public int Degree = 0;
-        double[] a;
+        List<double> a = new List<double>();
 
         // method to determine the degree of the polynomial
-        public Polynomial (double [] pa)
+        public Polynomial (List<double> termList)
         {
-            a = pa;
-            this.Degree = a.Length - 1;
+            foreach (double elem in termList)
+            {
+                a.Add(elem);
+            }
+            this.Degree = a.Count - 1;
             
         }
         
@@ -60,9 +76,8 @@ namespace ConsoleApp2
             double resultat = 0;
             for (int i = Degree; i >= 0; i--)
             {
-                double resultatx = a[a.Length-(i+1)] * Math.Pow(value, i);
+                double resultatx = a[a.Count - (i + 1)] * Math.Pow(value, i);
                 resultat += resultatx;
-                // Console.WriteLine($"degree {i} : {resultat} et {resultatx}");
             }
             return resultat; 
         }
@@ -71,10 +86,21 @@ namespace ConsoleApp2
         public override string ToString()
         {
             string result = "";
-            int n = Degree; 
+            int n = Degree;
+
+            // loop to display elements of a list
+            StringBuilder builder = new StringBuilder();
+            foreach (int safePrime in a)
+            {
+                // Append each int to the StringBuilder overload.
+                builder.Append(safePrime).Append(" ");
+            }
+            string resultString = builder.ToString();
+            Console.WriteLine("these are the elements of list  : [" + resultString + "]");
+
             for (int i = 0; i <= Degree; i++)
             {
-                if (a[i] == 0)
+                if (a[i] == 0) // number equals 0, there is no x for that degree
                 {
                     result += "";
                 }

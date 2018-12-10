@@ -9,9 +9,11 @@ namespace Labo3_Test_Unitaire
 {
     class IsDickStringMain
     {
-
+        // use of stack and dictionnary -> advantages : dictionnary is simple to modify and expanse
+        // stack we can easily compare to last element added 
         public static bool IsDyckString(string s, Dictionary<string, string> alphabet)
         {
+
             Stack st = new Stack();
             // st.Push(3); to push something on the stack and st.Pop() to remove last added element
             try

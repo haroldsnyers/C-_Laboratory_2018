@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gestionevaluation
 {
+    // Student extends from the class Person
     public class Student : Person
     {
+        // a student can have more than 1 evaluation
         private List<Evaluation> cours = new List<Evaluation>();
-
 
         public Student(string Fname, string Lname) : base (Fname, Lname)
         {
@@ -31,9 +32,9 @@ namespace Gestionevaluation
         {
             foreach (Evaluation e in cours)
             {
-                Console.WriteLine("{0}({1}: Teacher: {2}; Crédit: {3}",e.A.Name, e.A.Code, e.A.T, e.A.ECTS);
+                // e for the evaluation, A is how we named an Activity in the evaluation
+                Console.WriteLine("{0}({1}: Teacher: {2}; Crédit: {3}", e.A.Name, e.A.Code, e.A.T, e.A.ECTS);
                 Console.WriteLine(e.Score());
-
             }
             
         }

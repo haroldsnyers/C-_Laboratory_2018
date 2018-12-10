@@ -16,6 +16,7 @@ namespace Gestionevaluation
             base.A = A;
         }
 
+        // Score from extended class is overriden 
         public override int Score()
         {
             switch (appreciation)
@@ -29,6 +30,7 @@ namespace Gestionevaluation
             return 0;
         }
 
+        // set a new score 
         public void SetAppreciation(string Anote)
         {
             this.appreciation = Anote;

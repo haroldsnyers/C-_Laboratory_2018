@@ -13,6 +13,7 @@ namespace Adder
         public double Compute(params double[] values)
         {
             double result = 0;
+            // adds up each element of the array value
             Array.ForEach(values, value => result += value );
             return result ;
         }

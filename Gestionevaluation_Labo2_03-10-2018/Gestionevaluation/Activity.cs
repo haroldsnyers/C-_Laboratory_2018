@@ -11,7 +11,7 @@ namespace Gestionevaluation
         public int ECTS = 0;
         public string Name;
         public string Code;
-        public Teacher T;
+        public Teacher T;       // each activity has 1 teacher
 
         public Activity(Teacher T, int credit, string CourseName, string Code)
         {

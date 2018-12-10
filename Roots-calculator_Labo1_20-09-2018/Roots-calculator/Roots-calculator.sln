@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roots-calculator", "ConsoleApp1\Roots-calculator.csproj", "{7D62F81F-9C2A-4D2A-BF21-201B5A34445C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roots-calculator", "Roots-calculator.csproj", "{7D62F81F-9C2A-4D2A-BF21-201B5A34445C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DAAB6D80-56F5-488B-892B-C510D31B794B}
+		SolutionGuid = {F334CEB5-F712-4A53-B3ED-F701D50812B6}
 	EndGlobalSection
 EndGlobal

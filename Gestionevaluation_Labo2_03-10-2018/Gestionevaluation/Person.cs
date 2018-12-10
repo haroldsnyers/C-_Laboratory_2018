@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestionevaluation
 {
+    // Model class for a person -> Teacher, Student, 
     public class Person
     {
         public string Firstname;

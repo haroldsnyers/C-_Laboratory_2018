@@ -23,9 +23,8 @@ namespace Labo3_Test_Unitaire
             alphabet.Add("<", ">");
             alphabet.Add("*", "/");
 
-            // TODO: Add your test code here
-            // Assert.AreEqual(true, Dyck.IsDyckString("((()))"));
-            // Assert.AreEqual(true, Dyck.IsDyckString("[(())]"));
+            // test to see if program is doing what we want him doing
+            // Assert.AreEqual(expected response, method of class to be tested)
             Assert.AreEqual(true, IsDickStringMain.IsDyckString("[(())]", alphabet));
             Assert.AreEqual(false, IsDickStringMain.IsDyckString("[((/*))]", alphabet));
             Assert.AreEqual(true, IsDickStringMain.IsDyckString("[(({}{}))]", alphabet));
