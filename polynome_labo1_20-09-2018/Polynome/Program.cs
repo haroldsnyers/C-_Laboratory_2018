@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+    /* 
+     * Program which can print, determine the degree and evaluate 
+     * a polynome of the form anx^n + ... + a²x² + a1x + a0
+     * Author : Harold Snyers
+     * Version : 19 december 2018
+    */
     class Program
     {
         static double Valors()
@@ -30,7 +36,8 @@ namespace ConsoleApp2
 
         }
         static void Main(string[] args)
-        {                             
+        {   
+            //creation first polynome
             List<double> termsList = new List<double>();
             Console.WriteLine("Ajouter Polynome? Y/N");
             string response = Console.ReadLine();
@@ -42,15 +49,36 @@ namespace ConsoleApp2
                 Console.WriteLine("Encore un nombre? Y/N");
                 response = Console.ReadLine();
             }
+            // creation second polynome
+            List<double> termsList1 = new List<double>();
+            Console.WriteLine("Ajouter Polynome? Y/N");
+            string response1 = Console.ReadLine();
+            Console.WriteLine("Entrée les nombres dans l'ordre");
+            while (response1 == "Y")
+            {
+                double tmpNbr = Valors();
+                termsList1.Add(tmpNbr);
+                Console.WriteLine("Encore un nombre? Y/N");
+                response1 = Console.ReadLine();
+            }
 
             Polynomial p = new Polynomial(termsList);
+            Polynomial q = new Polynomial(termsList1);
 
             Console.WriteLine(p.Degree);
             Console.WriteLine(p);
             Console.WriteLine("Entrée le chiffre avec lequel vous voulez évaluez la fonction");
             double number = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine(p.Evaluate(2));
+            Console.WriteLine(p.Evaluate(number));
 
+            Console.WriteLine(q.Degree);
+            Console.WriteLine(q);
+            Console.WriteLine("Entrée le chiffre avec lequel vous voulez évaluez la fonction");
+            double number1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(p.Evaluate(number1));
+
+            Console.WriteLine(p == q);
+            Console.WriteLine(p.Equals(q));
         }
     }
 

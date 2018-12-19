@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /* 
+     * Program which searches for roots of second 
+     * degree trinome of the form ax^2 + bx + c
+     * Author : Harold Snyers
+     * Version : 19 december 2018
+    */
+
     class Program
     {
         static double Valors()
@@ -32,10 +39,6 @@ namespace ConsoleApp1
          
         static void Main(string[] args)
         {
-            // Program which searches for roots of second degree trinome of the form ax^2 + bx + c
-            // Author : Harold
-            // Version : 27 september 2018
-
             // assigning entered valors 
             double a = Valors();
             double b = Valors();
@@ -65,19 +68,11 @@ namespace ConsoleApp1
                     {
                         double x1 = (-b - Math.Sqrt(delta)) / (2 * a);
                         double x2 = (-b + Math.Sqrt(delta)) / (2 * a);
-                        Console.WriteLine("deux racines réelles distinctes: {0} et {1}", x1, x2);                     
+                        Console.WriteLine("deux racines réelles distinctes: " +
+                            "{0} et {1}", x1, x2);                     
                     }
                     break; 
             }
-
-
-
-
-
-
-
         }
-
-
     }
 }
